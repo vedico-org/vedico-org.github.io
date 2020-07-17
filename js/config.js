@@ -29,17 +29,14 @@ function display(text) {
 
 function showVersion(type, obj, id) {
   if (type == "svg") {
-    scb.textContent =
-      '<img src="https://cdn.jsdelivr.net/gh/vedico-org/vedico/svg/' +
-      obj.svg[id] +
-      '.svg">';
+    scb.textContent = `<img src="https://cdn.jsdelivr.net/gh/vedico-org/vedico/svg/${obj.svg[id]}.svg">`;
     if (svg_list.getElementsByClassName("selected")[0] != undefined) {
       svg_list.getElementsByClassName("selected")[0].classList = "version";
     }
     svg_list.getElementsByClassName("version")[id].classList =
       "version selected";
   } else if (type == "font") {
-    fcb.textContent = '<i class="vedico-' + obj.font[id] + "></i>";
+    fcb.textContent = `<i class="vedico-${obj.font[id]}"></i>`;
     if (font_list.getElementsByClassName("selected")[0] != undefined) {
       font_list.getElementsByClassName("selected")[0].classList = "version";
     }
@@ -59,7 +56,7 @@ function getDetails(obj) {
     const el = document.createElement("div");
     el.className = "version";
     const icon = document.createElement("i");
-    icon.className = "vedico-" + obj.font[x];
+    icon.className = `vedico-${obj.font[x]}`;
     el.appendChild(icon);
     el.addEventListener("click", () => {
       showVersion("font", obj, x);
@@ -72,10 +69,7 @@ function getDetails(obj) {
     const el = document.createElement("div");
     el.className = "version";
     const img = document.createElement("img");
-    img.src =
-      "https://cdn.jsdelivr.net/gh/vedico-org/vedico/svg/" +
-      obj.svg[y] +
-      ".svg";
+    img.src = `https://cdn.jsdelivr.net/gh/vedico-org/vedico/svg/${obj.svg[y]}.svg`;
     el.appendChild(img);
     el.addEventListener("click", () => {
       showVersion("svg", obj, y);
