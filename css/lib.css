@@ -133,6 +133,7 @@ input::placeholder {
    color: var(--dark);
    font-size: 85px;
    width: 25%;
+   height: 35%;
    display: flex;
    flex-direction: column;
    align-items: center;
