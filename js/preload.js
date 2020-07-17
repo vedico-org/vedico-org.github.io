@@ -1,3 +1,3 @@
 window.onload = () => {
-   document.getElementsByTagName('body')[0].classList.remove("preload");
+  document.getElementsByTagName("body")[0].classList.remove("preload");
 };
